@@ -2,16 +2,12 @@ import CharacterList from './CharacterList';
 import Filters from '../Filters/Filters';
 
 const Landing = ({
-  data,
+  dataFiltered,
   selectedHouse,
   setSelectedHouse,
   searchValue,
   setSearchValue,
 }) => {
-  const dataFiltered = data.filter((eachObj) =>
-    eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
-  );
-
   return (
     <main>
       <Filters

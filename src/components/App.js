@@ -1,10 +1,10 @@
 import '../styles/App.scss';
 import Header from './Header';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, matchPath } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Landing from './Landing/Landing';
 import CharacterDetail from './CharacterDetail';
-import callToApi from '../services/api';
+import api from '../services/api';
 
 function App() {
   const [data, setData] = useState([]);
@@ -12,10 +12,25 @@ function App() {
   const [selectedHouse, setSelectedHouse] = useState('gryffindor');
 
   useEffect(() => {
-    callToApi(selectedHouse).then((info) => {
-      setData(info);
-    });
+    if (selectedHouse === 'all') {
+      api.allCharacters(selectedHouse).then((info) => {
+        setData(info);
+      });
+    } else {
+      api.house(selectedHouse).then((info) => {
+        setData(info);
+      });
+    }
   }, [selectedHouse]);
+
+  const dataFiltered = data.filter((eachObj) =>
+    eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  const { pathname } = useLocation();
+  const dataUrl = matchPath('/detail/:id', pathname);
+  const dataId = dataUrl !== null ? dataUrl.params.id : null;
+  const dataFind = dataFiltered.find((eachObj) => eachObj.id === dataId);
 
   return (
     <>
@@ -26,6 +41,7 @@ function App() {
           element={
             <Landing
               data={data}
+              dataFiltered={dataFiltered}
               searchValue={searchValue}
               setSearchValue={setSearchValue}
               selectedHouse={selectedHouse}
@@ -33,7 +49,10 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/detail" element={<CharacterDetail data={data} />}></Route>
+        <Route
+          path="/detail/:id"
+          element={<CharacterDetail dataFind={dataFind} />}
+        ></Route>
       </Routes>
     </>
   );

@@ -1,17 +1,25 @@
 import { Link } from 'react-router-dom';
 
-const CharacterDetail = ({ data }) => {
+const CharacterDetail = ({ dataFind }) => {
+  const renderAlternateNames = () => {
+    const array = dataFind.alternate_names;
+    const names = array.map((eachName) => {
+      return <li>{eachName}</li>;
+    });
+    return names;
+  };
+
   return (
     <main>
       <Link to="/">Volver</Link>
       <article>
-        <img src="" alt="" />
-        <p>Nombre</p>
-        <p>Casa</p>
-        <p>Si vivo o muerto</p>
-        <p>Género</p>
-        <p>Especie</p>
-        <p>Nombres alternativos</p>
+        <img src={dataFind.image} alt="" />
+        <p>{dataFind.name}</p>
+        <p>Casa: {dataFind.house}</p>
+        <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
+        <p>Género: {dataFind.gender}</p>
+        <p>Especie: {dataFind.species}</p>
+        <ul>Nombres alternativos: {renderAlternateNames()}</ul>
       </article>
     </main>
   );

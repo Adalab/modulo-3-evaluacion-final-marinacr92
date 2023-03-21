@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const CharacterCard = ({ eachCharacter }) => {
   return (
-    <Link to="/detail">
+    <Link to={`/detail/${eachCharacter.id}`}>
       <li id={eachCharacter.id}>
         <img src={eachCharacter.image} alt="" />
         <p>{eachCharacter.name}</p>
