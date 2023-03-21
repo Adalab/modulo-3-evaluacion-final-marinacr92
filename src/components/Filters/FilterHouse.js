@@ -1,8 +1,6 @@
-const Form = () => {
+const FilterHouse = () => {
   return (
-    <form action="">
-      <label htmlFor="">Filtrar por nombre</label>
-      <input type="text" />
+    <>
       <label htmlFor="">Filtrar por casa</label>
       <select name="" id="">
         <option value="gryffindor">Gryffindor</option>
@@ -10,8 +8,8 @@ const Form = () => {
         <option value="ravenclaw">Ravenclaw</option>
         <option value="slytherin">Slytherin</option>
       </select>
-    </form>
+    </>
   );
 };
 
-export default Form;
+export default FilterHouse;

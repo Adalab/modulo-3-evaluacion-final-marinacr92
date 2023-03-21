@@ -1,25 +1,19 @@
-import Form from './Form';
+import { useState } from 'react';
 import CharacterList from './CharacterList';
-import { useEffect, useState } from 'react';
-import callToApi from '../../services/api';
+import Filters from '../Filters/Filters';
 
-const Landing = () => {
-  const [data, setData] = useState([]);
+const Landing = ({ data }) => {
+  const [searchValue, setSearchValue] = useState('');
 
-  useEffect(() => {
-    callToApi().then((info) => {
-      console.log(info);
-      setData(info);
-    });
-  }, []);
+  const dataFiltered = data.filter((eachObj) =>
+    eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
     <main>
+      <Filters searchValue={searchValue} setSearchValue={setSearchValue} />
       <section>
-        <Form></Form>
-      </section>
-      <section>
-        <CharacterList data={data}></CharacterList>
+        <CharacterList data={dataFiltered}></CharacterList>
       </section>
     </main>
   );

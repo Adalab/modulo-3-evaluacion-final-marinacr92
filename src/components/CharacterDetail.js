@@ -1,6 +1,9 @@
-const CharacterDetail = () => {
+import { Link } from 'react-router-dom';
+
+const CharacterDetail = ({ data }) => {
   return (
     <main>
+      <Link to="/">Volver</Link>
       <article>
         <img src="" alt="" />
         <p>Nombre</p>
