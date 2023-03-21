@@ -1,13 +1,8 @@
-const callToApi = (searchName) => {
-  return fetch(`https://swapi.dev/api/people/?search=${searchName}`)
+const callToApi = () => {
+  return fetch('https://hp-api.onrender.com/api/characters/house/gryffindor')
     .then((response) => response.json())
-    .then((response) => {
-      const result = response.results.map((character) => {
-        return {
-          name: character.name,
-        };
-      });
-      return result;
+    .then((data) => {
+      return data;
     });
 };
 
