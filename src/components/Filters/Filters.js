@@ -1,7 +1,12 @@
 import FilterCharacter from './FilterCharacter';
 import FilterHouse from './FilterHouse';
 
-const Filters = ({ searchValue, setSearchValue }) => {
+const Filters = ({
+  searchValue,
+  setSearchValue,
+  selectedHouse,
+  setSelectedHouse,
+}) => {
   return (
     <section>
       <form>
@@ -9,7 +14,10 @@ const Filters = ({ searchValue, setSearchValue }) => {
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
-        <FilterHouse />
+        <FilterHouse
+          selectedHouse={selectedHouse}
+          setSelectedHouse={setSelectedHouse}
+        />
       </form>
     </section>
   );
