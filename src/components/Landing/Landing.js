@@ -17,7 +17,11 @@ const Landing = ({
         setSelectedHouse={setSelectedHouse}
       />
       <section>
-        <CharacterList data={dataFiltered}></CharacterList>
+        {dataFiltered.length > 0 ? (
+          <CharacterList dataFiltered={dataFiltered}></CharacterList>
+        ) : (
+          `No hay personajes que coincidan con ${searchValue}`
+        )}
       </section>
     </main>
   );
