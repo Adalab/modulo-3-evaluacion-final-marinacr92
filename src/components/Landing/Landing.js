@@ -1,6 +1,7 @@
 import CharacterList from './CharacterList';
 import Filters from '../Filters/Filters';
 import BtnReset from './BtnReset';
+import '../../styles/Landing.scss';
 
 const Landing = ({
   dataFiltered,
@@ -12,7 +13,7 @@ const Landing = ({
   setSelectedGender,
 }) => {
   return (
-    <main>
+    <main className="main-landing">
       <Filters
         searchValue={searchValue}
         setSearchValue={setSearchValue}
@@ -26,7 +27,7 @@ const Landing = ({
         setSelectedHouse={setSelectedHouse}
         setSelectedGender={setSelectedGender}
       />
-      <section>
+      <section className="section-list">
         {dataFiltered.length > 0 ? (
           <CharacterList dataFiltered={dataFiltered} />
         ) : (
