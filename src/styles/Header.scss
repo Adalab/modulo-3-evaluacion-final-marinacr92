@@ -1,17 +1,17 @@
 .header{
-    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/hogwarts4.png');
-    background-position: center;
+    background-image: url('../images/papiro.jpg');
+    background-position: bottom;
     background-size: cover;
+    border-bottom: 2px solid black;
 
     &-img{
         width: 100%;
         
         &-container{
-           width: 300px;
+           width: 400px;
            
         }
     }
