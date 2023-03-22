@@ -1,4 +1,5 @@
 import FilterCharacter from './FilterCharacter';
+import FilterGender from './FilterGender';
 import FilterHouse from './FilterHouse';
 
 const Filters = ({
@@ -6,6 +7,8 @@ const Filters = ({
   setSearchValue,
   selectedHouse,
   setSelectedHouse,
+  selectedGender,
+  setSelectedGender,
 }) => {
   const handleSubmit = (ev) => {
     ev.prevent.default();
@@ -21,6 +24,10 @@ const Filters = ({
         <FilterHouse
           selectedHouse={selectedHouse}
           setSelectedHouse={setSelectedHouse}
+        />
+        <FilterGender
+          selectedGender={selectedGender}
+          setSelectedGender={setSelectedGender}
         />
       </form>
     </section>

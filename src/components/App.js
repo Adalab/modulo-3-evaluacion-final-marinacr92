@@ -11,6 +11,7 @@ function App() {
   const [data, setData] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('gryffindor');
+  const [selectedGender, setSelectedGender] = useState('all');
 
   useEffect(() => {
     if (selectedHouse === 'all') {
@@ -24,9 +25,13 @@ function App() {
     }
   }, [selectedHouse]);
 
-  const dataFiltered = data.filter((eachObj) =>
-    eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const dataFiltered = data
+    .filter((eachObj) =>
+      eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    .filter((eachObj) =>
+      selectedGender !== 'all' ? eachObj.gender === selectedGender : data
+    );
 
   const { pathname } = useLocation();
   const dataUrl = matchPath('/detail/:id', pathname);
@@ -47,6 +52,8 @@ function App() {
               setSearchValue={setSearchValue}
               selectedHouse={selectedHouse}
               setSelectedHouse={setSelectedHouse}
+              selectedGender={selectedGender}
+              setSelectedGender={setSelectedGender}
             />
           }
         ></Route>

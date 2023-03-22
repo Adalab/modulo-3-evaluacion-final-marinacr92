@@ -8,6 +8,8 @@ const Landing = ({
   setSelectedHouse,
   searchValue,
   setSearchValue,
+  selectedGender,
+  setSelectedGender,
 }) => {
   return (
     <main>
@@ -16,10 +18,13 @@ const Landing = ({
         setSearchValue={setSearchValue}
         selectedHouse={selectedHouse}
         setSelectedHouse={setSelectedHouse}
+        selectedGender={selectedGender}
+        setSelectedGender={setSelectedGender}
       />
       <BtnReset
         setSearchValue={setSearchValue}
         setSelectedHouse={setSelectedHouse}
+        setSelectedGender={setSelectedGender}
       />
       <section>
         {dataFiltered.length > 0 ? (
