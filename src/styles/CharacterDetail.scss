@@ -1,6 +1,4 @@
 .main-detail{
-    // width: 100vw;
-    // height: 100%;
     background-image: url('../images/papiro.jpg');
     position: relative;
     display: flex;
@@ -12,16 +10,26 @@
 .btn-back{
     background-image: url('../images/negro.jpg');
     background-size: contain;
-    padding: 10px;
+    padding: 10px 15px;
     color: white;
+    font-size: 15px;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 15px;
     position: absolute;
     top:30px;
     right: 30px;
 
+    &-img{
+        width: 35px;
+        margin-right: 10px
+    }
+}
 
+.icon-status{
+    width: 35px;
+    height: 35px;
+    margin-bottom: 10px;
 }
 
 .detail{
@@ -31,8 +39,9 @@
         border-radius: 20px;
         padding: 20px;
         display: flex;
-        gap: 30px;
+        gap: 20px;
         background-position: left;
+        position: relative;
     }
     &-img {
         border-radius: 20px;
@@ -43,8 +52,9 @@
         border-top: solid 2px white;
         border-bottom: solid 2px white;
         padding: 8px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         text-align: center;
+        
     }
     
     &-text {
@@ -54,6 +64,12 @@
         justify-content: center;
         font-size: 16px;
         font-weight: 600;
+
+        &-header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &-badge{

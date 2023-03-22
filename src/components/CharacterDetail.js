@@ -8,6 +8,9 @@ import badgeGryff from '../images/badgeGryff.png';
 import badgeHuff from '../images/badgeHuff.png';
 import badgeRav from '../images/badgeRav.png';
 import badgeSlyth from '../images/badgeSlyth.png';
+import snitch from '../images/snitch.png';
+import alive from '../images/heart.png';
+import dead from '../images/dead.png';
 
 const CharacterDetail = ({ dataFind }) => {
   const renderAlternateNames = () => {
@@ -45,7 +48,8 @@ const CharacterDetail = ({ dataFind }) => {
   return (
     <main className="main-detail">
       <Link to="/" className="btn-back">
-        Volver a la página principal
+        <img src={snitch} className="btn-back-img" alt="" />
+        Volver a la Sala Común
       </Link>
       <div className="detail-badge">
         <img src={houseBadge()} alt="" className="detail-badge-img" />
@@ -58,7 +62,14 @@ const CharacterDetail = ({ dataFind }) => {
       >
         <img src={dataFind.image} alt="" className="detail-img" />
         <section className="detail-text">
-          <h2 className="detail-title">{dataFind.name}</h2>
+          <div className="detail-text-header">
+            <h2 className="detail-title">{dataFind.name}</h2>
+            <img
+              src={dataFind.alive ? alive : dead}
+              alt=""
+              className="icon-status"
+            />
+          </div>
           <p>Casa: {dataFind.house}</p>
           <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
           <p>Género: {dataFind.gender === 'male' ? 'Hombre' : 'Mujer'}</p>
