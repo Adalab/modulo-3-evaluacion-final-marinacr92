@@ -1,6 +1,7 @@
 import FilterCharacter from './FilterCharacter';
 import FilterGender from './FilterGender';
 import FilterHouse from './FilterHouse';
+import '../../styles/Filters.scss';
 
 const Filters = ({
   searchValue,
@@ -16,19 +17,21 @@ const Filters = ({
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <FilterCharacter
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
-        <FilterHouse
-          selectedHouse={selectedHouse}
-          setSelectedHouse={setSelectedHouse}
-        />
-        <FilterGender
-          selectedGender={selectedGender}
-          setSelectedGender={setSelectedGender}
-        />
+        <section className="form-select">
+          <FilterHouse
+            selectedHouse={selectedHouse}
+            setSelectedHouse={setSelectedHouse}
+          />
+          <FilterGender
+            selectedGender={selectedGender}
+            setSelectedGender={setSelectedGender}
+          />
+        </section>
       </form>
     </section>
   );

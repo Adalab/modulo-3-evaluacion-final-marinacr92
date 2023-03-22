@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 import Header from './Header';
-import { Route, Routes, useLocation, matchPath } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Landing from './Landing/Landing';
 import CharacterDetail from './CharacterDetail';
@@ -31,12 +31,8 @@ function App() {
     )
     .filter((eachObj) =>
       selectedGender !== 'all' ? eachObj.gender === selectedGender : data
-    );
-
-  const { pathname } = useLocation();
-  const dataUrl = matchPath('/detail/:id', pathname);
-  const dataId = dataUrl !== null ? dataUrl.params.id : null;
-  const dataFind = dataFiltered.find((eachObj) => eachObj.id === dataId);
+    )
+    .sort((a, b) => 1 /*a.name.localeCompare(b.name)*/);
 
   return (
     <>
@@ -57,10 +53,7 @@ function App() {
             />
           }
         ></Route>
-        <Route
-          path="/detail/:id"
-          element={<CharacterDetail dataFind={dataFind} />}
-        ></Route>
+        <Route path="/detail/:id" element={<CharacterDetail />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </>

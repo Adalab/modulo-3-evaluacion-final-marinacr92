@@ -4,11 +4,19 @@ const FilterGender = ({ selectedGender, setSelectedGender }) => {
   };
 
   return (
-    <select name="" id="" onChange={handleSelectGender} value={selectedGender}>
-      <option value="all">Todos</option>
-      <option value="female">Mujer</option>
-      <option value="male">Hombre</option>
-    </select>
+    <label htmlFor="" className="form-label">
+      Filtrar por género
+      <select
+        name=""
+        id=""
+        onChange={handleSelectGender}
+        value={selectedGender}
+      >
+        <option value="all">Todos</option>
+        <option value="female">Mujer</option>
+        <option value="male">Hombre</option>
+      </select>
+    </label>
   );
 };
 

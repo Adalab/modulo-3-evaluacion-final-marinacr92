@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, matchPath } from 'react-router-dom';
+import api from '../services/api';
 import '../styles/CharacterDetail.scss';
 import backRed from '../images/rojo.jpg';
 import backGreen from '../images/verde.jpg';
 import backBlue from '../images/azul.jpg';
 import backYellow from '../images/amarillo.jpeg';
+import backBlack from '../images/negro.jpg';
 import badgeGryff from '../images/badgeGryff.png';
 import badgeHuff from '../images/badgeHuff.png';
 import badgeRav from '../images/badgeRav.png';
@@ -11,16 +15,32 @@ import badgeSlyth from '../images/badgeSlyth.png';
 import snitch from '../images/snitch.png';
 import alive from '../images/heart.png';
 import dead from '../images/dead.png';
+import NotFoundPage from './NotFoundPage';
 
-const CharacterDetail = ({ dataFind }) => {
+const CharacterDetail = () => {
+  const [allData, setAllData] = useState([]);
+
+  useEffect(() => {
+    console.log('allData', allData);
+
+    api.allCharacters('all').then((info) => {
+      setAllData(info);
+    });
+  }, []);
+
+  const { pathname } = useLocation();
+  const dataUrl = matchPath('/detail/:id', pathname);
+  const dataId = dataUrl !== null ? dataUrl.params.id : null;
+  const dataFind = allData.find((eachObj) => eachObj.id === dataId);
+
   const renderAlternateNames = () => {
     const array = dataFind.alternate_names;
-    const names = array.map((eachName) => {
-      return <li>{eachName}</li>;
+    const names = array.map((eachName, index) => {
+      return <li key={index}>{eachName}</li>;
     });
     return names;
   };
-
+  console.log('Holi');
   const houseBadge = () => {
     if (dataFind.house === 'Gryffindor') {
       return `${badgeGryff}`;
@@ -42,10 +62,14 @@ const CharacterDetail = ({ dataFind }) => {
       return `${backBlue}`;
     } else if (dataFind.house === 'Hufflepuff') {
       return `${backYellow}`;
+    } else {
+      return `${backBlack}`;
     }
   };
 
-  return (
+  console.log('dataFind2', dataFind);
+
+  return dataFind && dataFind.id ? (
     <main className="main-detail">
       <Link to="/" className="btn-back">
         <img src={snitch} className="btn-back-img" alt="" />
@@ -82,6 +106,10 @@ const CharacterDetail = ({ dataFind }) => {
           </ul>
         </section>
       </article>
+    </main>
+  ) : (
+    <main>
+      <NotFoundPage />
     </main>
   );
 };

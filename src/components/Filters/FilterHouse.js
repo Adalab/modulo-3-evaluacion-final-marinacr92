@@ -4,8 +4,8 @@ const FilterHouse = ({ selectedHouse, setSelectedHouse }) => {
   };
 
   return (
-    <>
-      <label htmlFor="">Filtrar por casa</label>
+    <label htmlFor="" className="form-label">
+      Filtrar por casa
       <select name="" id="" onChange={handleselectHouse} value={selectedHouse}>
         <option value="all">Todos los personajes</option>
         <option value="gryffindor">Gryffindor</option>
@@ -13,7 +13,7 @@ const FilterHouse = ({ selectedHouse, setSelectedHouse }) => {
         <option value="ravenclaw">Ravenclaw</option>
         <option value="slytherin">Slytherin</option>
       </select>
-    </>
+    </label>
   );
 };
 

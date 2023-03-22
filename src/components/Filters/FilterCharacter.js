@@ -5,15 +5,16 @@ const FilterCharacter = ({ setSearchValue, searchValue }) => {
   };
 
   return (
-    <>
-      <label htmlFor="">Filtrar por nombre</label>
+    <label htmlFor="" className="form-label">
+      Filtrar por nombre
       <input
         type="text"
         value={searchValue}
         onInput={handleInput}
         placeholder="Ej.: Harry..."
+        className="form-input"
       />
-    </>
+    </label>
   );
 };
 

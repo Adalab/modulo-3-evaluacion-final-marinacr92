@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import '../../styles/CharacterCard.scss';
+import defaultImage from '../../images/plata.jpg';
 
 const CharacterCard = ({ eachCharacter }) => {
-  const defaultImage = `https://via.placeholder.com/300x400/CDCDCD/666666/?text=${eachCharacter.name}`;
+  // const defaultImage = `https://via.placeholder.com/300x400/CDCDCD/666666/?text=${eachCharacter.name}`;
 
   return (
     <Link to={`/detail/${eachCharacter.id}`} className="link-character">
