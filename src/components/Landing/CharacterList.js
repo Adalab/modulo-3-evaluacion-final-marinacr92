@@ -7,6 +7,6 @@ const CharacterList = ({ dataFiltered }) => {
     );
   });
 
-  return <ul>{character}</ul>;
+  return <ul className="list-characters">{character}</ul>;
 };
 export default CharacterList;
