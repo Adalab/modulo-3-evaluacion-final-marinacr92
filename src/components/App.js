@@ -4,6 +4,7 @@ import { Route, Routes, useLocation, matchPath } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Landing from './Landing/Landing';
 import CharacterDetail from './CharacterDetail';
+import NotFoundPage from './NotFoundPage';
 import api from '../services/api';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           path="/detail/:id"
           element={<CharacterDetail dataFind={dataFind} />}
         ></Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </>
   );

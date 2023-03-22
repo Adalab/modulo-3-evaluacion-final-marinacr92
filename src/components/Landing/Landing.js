@@ -1,5 +1,6 @@
 import CharacterList from './CharacterList';
 import Filters from '../Filters/Filters';
+import BtnReset from './BtnReset';
 
 const Landing = ({
   dataFiltered,
@@ -16,9 +17,13 @@ const Landing = ({
         selectedHouse={selectedHouse}
         setSelectedHouse={setSelectedHouse}
       />
+      <BtnReset
+        setSearchValue={setSearchValue}
+        setSelectedHouse={setSelectedHouse}
+      />
       <section>
         {dataFiltered.length > 0 ? (
-          <CharacterList dataFiltered={dataFiltered}></CharacterList>
+          <CharacterList dataFiltered={dataFiltered} />
         ) : (
           `No hay personajes que coincidan con ${searchValue}`
         )}

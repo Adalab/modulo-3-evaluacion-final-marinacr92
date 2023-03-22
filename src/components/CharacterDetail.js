@@ -19,7 +19,12 @@ const CharacterDetail = ({ dataFind }) => {
         <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
         <p>Género: {dataFind.gender}</p>
         <p>Especie: {dataFind.species}</p>
-        <ul>Nombres alternativos: {renderAlternateNames()}</ul>
+        <ul>
+          Nombres alternativos:{' '}
+          {dataFind.alternate_names.length > 0
+            ? renderAlternateNames()
+            : 'no tiene'}
+        </ul>
       </article>
     </main>
   );

@@ -7,9 +7,13 @@ const Filters = ({
   selectedHouse,
   setSelectedHouse,
 }) => {
+  const handleSubmit = (ev) => {
+    ev.prevent.default();
+  };
+
   return (
     <section>
-      <form>
+      <form onSubmit={handleSubmit}>
         <FilterCharacter
           searchValue={searchValue}
           setSearchValue={setSearchValue}
