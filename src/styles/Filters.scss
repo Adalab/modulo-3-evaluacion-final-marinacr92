@@ -1,12 +1,38 @@
+.section-form{
+    position: relative;
+
+    @media all and (min-width: 768px) {
+        width: 760px;
+        transform: translateY(-20px);
+        margin: 0 auto;
+    }
+
+    @media all and (min-width: 1024px) {
+        width: 900px;
+    }
+}
+
 .form{
     background-image: url('../images/negro.jpg');
     background-position: bottom;
     background-size: contain;
-    height: 150px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
+    @media all and (min-width: 768px) {
+        width: 760px;
+        transform: translateY(-20px);
+        margin: 0 auto;
+        border: solid 2px grey;
+        border-radius: 20px;
+    }
+    
+    @media all and (min-width: 1024px) {
+        width: 900px;
+    }
 
     &-label{
         color: white;
@@ -16,20 +42,92 @@
         flex-direction: column;
         gap:5px;
         text-align: center;
+        
+        @media all and (min-width: 768px) {
+            font-size: 18px;
+        }
+        
+        @media all and (min-width: 1024px) {
+            font-size: 19px;
+        }
     }
 
     &-select{
         display: flex;
-        gap:10px
+        gap:10px;
+        cursor: pointer;
+        padding: 3px;
+        font-size: 15px;
+        border-radius: 5px;
+
+        @media all and (min-width: 768px) {
+            font-size: 17px;
+        }
+    
+        @media all and (min-width: 1024px) {
+            font-size: 18px;
+        }
     }
 
     &-input{
         padding: 3px;
         font-size: 15px;
+        border-radius: 5px;
+
+        @media all and (min-width: 768px) {
+            font-size: 17px;
+        }
+    
+        @media all and (min-width: 1024px) {
+            font-size: 18px;
+        }
+    }
+}
+
+.btn-inactive{
+    background-color: transparent;
+    border: none;
+}
+
+.btn-active{
+    background-color: grey;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+    
+.btn-alphabetic-icon{
+    width: 40px;
+
+    @media all and (min-width: 768px) {
+        width: 50px;
+    }
+}
+
+.hogwarts {
+    position: absolute;
+    top: -50px;
+    left: 15px;
+
+    @media all and (min-width: 768px) {
+        top: -78px;
+        width: 60px;
     }
 
-    &-select{
-        padding: 3px;
-        font-size: 15px;
+}
+
+.express {
+    width: 170px;
+    position: absolute;
+    top: -55px;
+    right: 10px;
+
+    @media all and (min-width: 768px) {
+        top: -79px;
+        width: 185px;
+    }
+
+    @media all and (min-width: 1024px) {
+        top: -90px;
+        width: 220px;
     }
 }

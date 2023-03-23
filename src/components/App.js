@@ -12,6 +12,7 @@ function App() {
   const [searchValue, setSearchValue] = useState('');
   const [selectedHouse, setSelectedHouse] = useState('gryffindor');
   const [selectedGender, setSelectedGender] = useState('all');
+  //const [dataFiltered, setDataFiltered] = useState([]);
 
   useEffect(() => {
     if (selectedHouse === 'all') {
@@ -25,14 +26,24 @@ function App() {
     }
   }, [selectedHouse]);
 
+  // useEffect(() => {
+  //   const filtered = data
+  //     .filter((eachObj) =>
+  //       eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
+  //     )
+  //     .filter((eachObj) =>
+  //       selectedGender !== 'all' ? eachObj.gender === selectedGender : data
+  //     );
+  //   setDataFiltered(filtered);
+  // }, [data]);
+
   const dataFiltered = data
     .filter((eachObj) =>
       eachObj.name.toLowerCase().includes(searchValue.toLowerCase())
     )
     .filter((eachObj) =>
       selectedGender !== 'all' ? eachObj.gender === selectedGender : data
-    )
-    .sort((a, b) => 1 /*a.name.localeCompare(b.name)*/);
+    );
 
   return (
     <>
@@ -44,6 +55,7 @@ function App() {
             <Landing
               data={data}
               dataFiltered={dataFiltered}
+              /*setDataFiltered={setDataFiltered}*/
               searchValue={searchValue}
               setSearchValue={setSearchValue}
               selectedHouse={selectedHouse}

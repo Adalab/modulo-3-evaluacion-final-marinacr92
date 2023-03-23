@@ -2,6 +2,9 @@ import FilterCharacter from './FilterCharacter';
 import FilterGender from './FilterGender';
 import FilterHouse from './FilterHouse';
 import '../../styles/Filters.scss';
+import AlphabeticOrder from './AlphabeticOrder';
+import hogwarts from '../../images/hogwarts.png';
+import express from '../../images/hogwartsExpress2.png';
 
 const Filters = ({
   searchValue,
@@ -10,13 +13,17 @@ const Filters = ({
   setSelectedHouse,
   selectedGender,
   setSelectedGender,
+  alphaOrder,
+  handleAlphabeticOrder,
 }) => {
   const handleSubmit = (ev) => {
-    ev.prevent.default();
+    ev.preventDefault();
   };
 
   return (
-    <section>
+    <section className="section-form">
+      <img src={hogwarts} alt="" className="hogwarts" />
+      <img src={express} alt="" className="express" />
       <form className="form" onSubmit={handleSubmit}>
         <FilterCharacter
           searchValue={searchValue}
@@ -32,6 +39,10 @@ const Filters = ({
             setSelectedGender={setSelectedGender}
           />
         </section>
+        <AlphabeticOrder
+          handleAlphabeticOrder={handleAlphabeticOrder}
+          alphaOrder={alphaOrder}
+        />
       </form>
     </section>
   );
