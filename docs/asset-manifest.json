@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "./static/css/main.f8d9dadf.css",
+    "main.js": "./static/js/main.cb1108fe.js",
+    "static/media/papiro.jpg": "./static/media/papiro.24db657d81b605f56cfc.jpg",
+    "static/media/cromoRana.png": "./static/media/cromoRana.3aac360b4004f98c7b15.png",
+    "static/media/verde.jpg": "./static/media/verde.12e13e1d68ada91c1c8b.jpg",
+    "static/media/rojo.jpg": "./static/media/rojo.eb8618e699f8c29700e1.jpg",
+    "static/media/negro.jpg": "./static/media/negro.7d19534e1c3e08ef24b6.jpg",
+    "static/media/badgeRav.png": "./static/media/badgeRav.9610bcde136dbfa89da6.png",
+    "static/media/badgeGryff.png": "./static/media/badgeGryff.5c4db2d2fff6851a55cb.png",
+    "static/media/badgeHuff.png": "./static/media/badgeHuff.f6d11a5457195a54f900.png",
+    "static/media/azul.jpg": "./static/media/azul.f93c437d3d8377b929f9.jpg",
+    "static/media/plata.jpg": "./static/media/plata.ee6503171a23e313b99d.jpg",
+    "static/media/badgeSlyth.png": "./static/media/badgeSlyth.97592be62eb44b45eea4.png",
+    "static/media/logoHP.png": "./static/media/logoHP.7487675e0d984945b4bc.png",
+    "static/media/amarillo.jpeg": "./static/media/amarillo.cba51f34e3e1023ad016.jpeg",
+    "static/media/hogwartsExpress2.png": "./static/media/hogwartsExpress2.186bc82cc58af0571a65.png",
+    "index.html": "./index.html",
+    "main.f8d9dadf.css.map": "./static/css/main.f8d9dadf.css.map",
+    "main.cb1108fe.js.map": "./static/js/main.cb1108fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8d9dadf.css",
+    "static/js/main.cb1108fe.js"
+  ]
+}
