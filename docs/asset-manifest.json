@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.f8d9dadf.css",
-    "main.js": "./static/js/main.cb1108fe.js",
+    "main.css": "./static/css/main.5b2efcf9.css",
+    "main.js": "./static/js/main.b5b4a1a1.js",
     "static/media/papiro.jpg": "./static/media/papiro.24db657d81b605f56cfc.jpg",
     "static/media/cromoRana.png": "./static/media/cromoRana.3aac360b4004f98c7b15.png",
     "static/media/verde.jpg": "./static/media/verde.12e13e1d68ada91c1c8b.jpg",
@@ -17,11 +17,11 @@
     "static/media/amarillo.jpeg": "./static/media/amarillo.cba51f34e3e1023ad016.jpeg",
     "static/media/hogwartsExpress2.png": "./static/media/hogwartsExpress2.186bc82cc58af0571a65.png",
     "index.html": "./index.html",
-    "main.f8d9dadf.css.map": "./static/css/main.f8d9dadf.css.map",
-    "main.cb1108fe.js.map": "./static/js/main.cb1108fe.js.map"
+    "main.5b2efcf9.css.map": "./static/css/main.5b2efcf9.css.map",
+    "main.b5b4a1a1.js.map": "./static/js/main.b5b4a1a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8d9dadf.css",
-    "static/js/main.cb1108fe.js"
+    "static/css/main.5b2efcf9.css",
+    "static/js/main.b5b4a1a1.js"
   ]
 }
