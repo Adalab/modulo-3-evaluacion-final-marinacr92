@@ -1,6 +1,10 @@
 import alphabeticIcon from '../../images/alphabeticIcon.png';
 
-const AlphabeticOrder = ({ handleAlphabeticOrder, alphaOrder }) => {
+const AlphabeticOrder = ({ setAlphaOrder, alphaOrder }) => {
+  const handleAlphabeticOrder = () => {
+    setAlphaOrder(!alphaOrder);
+  };
+
   return (
     <>
       <p className="form-label">Ordenar alfabéticamente</p>

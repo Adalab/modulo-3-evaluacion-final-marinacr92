@@ -14,7 +14,7 @@ const Filters = ({
   selectedGender,
   setSelectedGender,
   alphaOrder,
-  handleAlphabeticOrder,
+  setAlphaOrder,
 }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -40,7 +40,7 @@ const Filters = ({
           />
         </section>
         <AlphabeticOrder
-          handleAlphabeticOrder={handleAlphabeticOrder}
+          setAlphaOrder={setAlphaOrder}
           alphaOrder={alphaOrder}
         />
       </form>
