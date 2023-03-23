@@ -72,41 +72,55 @@ const CharacterDetail = () => {
         <img src={snitch} className="btn-back-img" alt="" />
         Volver al Gran Salón
       </Link>
-      <div className="detail-badge">
-        <img src={houseBadge()} alt="" className="detail-badge-img" />
+      <section className="badge-card">
+        <div className="detail-badge">
+          <img src={houseBadge()} alt="" className="detail-badge-img" />
+        </div>
+        <article
+          className="detail-card"
+          style={{
+            backgroundImage: `url(${backgroundHouse()})`,
+          }}
+        >
+          <div
+            className="detail-img"
+            style={{
+              backgroundImage: `url(${
+                dataFind.image !== '' ? dataFind.image : defaultImage
+              })`,
+            }}
+          ></div>
+          <section className="detail-text">
+            <div className="detail-text-header">
+              <h2 className="detail-title">{dataFind.name}</h2>
+              <img
+                src={dataFind.alive ? alive : dead}
+                alt=""
+                className="icon-status"
+              />
+            </div>
+            <p>Casa: {dataFind.house}</p>
+            <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
+            <p>Género: {dataFind.gender === 'male' ? 'Hombre' : 'Mujer'}</p>
+            <p>Especie: {dataFind.species}</p>
+            <ul className="alternate-names">
+              Nombres alternativos: <br></br>
+              {dataFind.alternate_names.length > 0
+                ? renderAlternateNames()
+                : 'no tiene'}
+            </ul>
+          </section>
+        </article>
+      </section>
+      <div className="container-url">
+        <p className="text-url">
+          ¿Quieres compartir la tarjeta? Copia la URL de abajo y envíasela a
+          quien quieras
+        </p>
+        <p className="url">
+          {`http://beta.adalab.es/modulo-3-evaluacion-final-marinacr92/#/detail/${dataFind.id}`}
+        </p>
       </div>
-      <article
-        className="detail-card"
-        style={{
-          backgroundImage: `url(${backgroundHouse()})`,
-        }}
-      >
-        <img
-          src={dataFind.image !== '' ? dataFind.image : defaultImage}
-          alt=""
-          className="detail-img"
-        />
-        <section className="detail-text">
-          <div className="detail-text-header">
-            <h2 className="detail-title">{dataFind.name}</h2>
-            <img
-              src={dataFind.alive ? alive : dead}
-              alt=""
-              className="icon-status"
-            />
-          </div>
-          <p>Casa: {dataFind.house}</p>
-          <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
-          <p>Género: {dataFind.gender === 'male' ? 'Hombre' : 'Mujer'}</p>
-          <p>Especie: {dataFind.species}</p>
-          <ul className="alternate-names">
-            Nombres alternativos: <br></br>
-            {dataFind.alternate_names.length > 0
-              ? renderAlternateNames()
-              : 'no tiene'}
-          </ul>
-        </section>
-      </article>
     </main>
   ) : (
     <NotFoundPage text={'El personaje que busca no existe'} />
