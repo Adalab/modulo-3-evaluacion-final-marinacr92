@@ -7,6 +7,11 @@
 .message-not-found{
     font-size: 18px;
     margin-top: 70px;
-    margin-left: 20px
+    margin-left: 20px;
+
+    @media all and (min-width: 768px) {
+        font-size: 20px;
+        margin-left: 50px;
+    }
 }
 

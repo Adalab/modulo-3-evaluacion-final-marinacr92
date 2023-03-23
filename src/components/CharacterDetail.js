@@ -109,9 +109,7 @@ const CharacterDetail = () => {
       </article>
     </main>
   ) : (
-    <main>
-      <NotFoundPage />
-    </main>
+    <NotFoundPage text={'El personaje que busca no existe'} />
   );
 };
 

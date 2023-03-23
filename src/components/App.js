@@ -66,7 +66,14 @@ function App() {
           }
         ></Route>
         <Route path="/detail/:id" element={<CharacterDetail />}></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
+        <Route
+          path="*"
+          element={
+            <NotFoundPage
+              text={'La página a la que intenta acceder no existe'}
+            />
+          }
+        ></Route>
       </Routes>
     </>
   );
