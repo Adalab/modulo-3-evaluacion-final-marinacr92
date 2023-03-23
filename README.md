@@ -20,9 +20,9 @@ El proyecto se ha realizado en **React JS** y se encuentra dividido en _componen
 
 En resumen, para la realización de la página web se ha utilizado:
 
-**HTML** y **CSS** para la maquetación
-**SASS** como preprocesador de CSS
-**React JS** como lenguaje de programación
-**NPM** como gestor de paquetes y dependencias (WSK)
-**Gulp**, herramienta de automatización de tareas (WSK)
+**HTML** y **CSS** para la maquetación  
+**SASS** como preprocesador de CSS  
+**React JS** como lenguaje de programación  
+**NPM** como gestor de paquetes y dependencias (WSK)  
+**Gulp**, herramienta de automatización de tareas (WSK)  
 ¡Muchas gracias!
