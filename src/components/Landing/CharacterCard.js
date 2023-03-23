@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../styles/CharacterCard.scss';
-import defaultImage from '../../images/plata.jpg';
+import defaultImage from '../../images/cromoRana.png';
 
 const CharacterCard = ({ eachCharacter }) => {
   return (

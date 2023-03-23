@@ -15,7 +15,7 @@ import badgeSlyth from '../images/badgeSlyth.png';
 import snitch from '../images/snitch.png';
 import alive from '../images/heart.png';
 import dead from '../images/dead.png';
-import defaultImage from '../images/plata.jpg';
+import defaultImage from '../images/cromoRana.png';
 import NotFoundPage from './NotFoundPage';
 
 const CharacterDetail = () => {
@@ -70,7 +70,7 @@ const CharacterDetail = () => {
     <main className="main-detail">
       <Link to="/" className="btn-back">
         <img src={snitch} className="btn-back-img" alt="" />
-        Volver a la Sala Común
+        Volver al Gran Salón
       </Link>
       <div className="detail-badge">
         <img src={houseBadge()} alt="" className="detail-badge-img" />
