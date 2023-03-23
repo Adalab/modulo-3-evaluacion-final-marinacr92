@@ -1,3 +1,5 @@
+import '../../styles/BtnReset.scss';
+
 const BtnReset = ({ setSearchValue, setSelectedHouse, setSelectedGender }) => {
   const handleReset = () => {
     setSearchValue('');
@@ -5,7 +7,11 @@ const BtnReset = ({ setSearchValue, setSelectedHouse, setSelectedGender }) => {
     setSelectedGender('all');
   };
 
-  return <button onClick={handleReset}>Borrar filtros</button>;
+  return (
+    <button onClick={handleReset} className="btn-reset">
+      Borrar filtros
+    </button>
+  );
 };
 
 export default BtnReset;

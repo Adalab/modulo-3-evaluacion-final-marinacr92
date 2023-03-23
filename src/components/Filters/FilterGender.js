@@ -11,6 +11,7 @@ const FilterGender = ({ selectedGender, setSelectedGender }) => {
         id=""
         onChange={handleSelectGender}
         value={selectedGender}
+        className="form-select"
       >
         <option value="all">Todos</option>
         <option value="female">Mujer</option>

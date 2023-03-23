@@ -6,7 +6,13 @@ const FilterHouse = ({ selectedHouse, setSelectedHouse }) => {
   return (
     <label htmlFor="" className="form-label">
       Filtrar por casa
-      <select name="" id="" onChange={handleselectHouse} value={selectedHouse}>
+      <select
+        name=""
+        id=""
+        onChange={handleselectHouse}
+        value={selectedHouse}
+        className="form-select"
+      >
         <option value="all">Todos los personajes</option>
         <option value="gryffindor">Gryffindor</option>
         <option value="hufflepuff">Hufflepuff</option>

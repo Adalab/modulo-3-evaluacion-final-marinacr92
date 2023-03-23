@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/papiro.jpg');
+    background-image: url('../images/negro.jpg');
     background-position: bottom;
-    background-size: cover;
-    border-bottom: 2px solid black;
+    background-size: contain;
+    position: relative;
+    border-bottom: 1px solid grey;
 
     &-img{
         width: 100%;
@@ -15,4 +16,10 @@
            
         }
     }
+}
+
+.hogwarts{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
 }

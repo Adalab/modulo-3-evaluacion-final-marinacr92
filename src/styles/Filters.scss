@@ -1,5 +1,7 @@
 .form{
     background-image: url('../images/negro.jpg');
+    background-position: bottom;
+    background-size: contain;
     height: 150px;
     display: flex;
     align-items: center;
@@ -8,12 +10,26 @@
 
     &-label{
         color: white;
-        font-size: 14px;
+        font-size: 17px;
         margin-bottom: 5px;
         display: flex;
+        flex-direction: column;
+        gap:5px;
+        text-align: center;
     }
 
     &-select{
+        display: flex;
+        gap:10px
+    }
 
+    &-input{
+        padding: 3px;
+        font-size: 15px;
+    }
+
+    &-select{
+        padding: 3px;
+        font-size: 15px;
     }
 }

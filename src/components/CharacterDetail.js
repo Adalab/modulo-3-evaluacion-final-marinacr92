@@ -15,14 +15,13 @@ import badgeSlyth from '../images/badgeSlyth.png';
 import snitch from '../images/snitch.png';
 import alive from '../images/heart.png';
 import dead from '../images/dead.png';
+import defaultImage from '../images/plata.jpg';
 import NotFoundPage from './NotFoundPage';
 
 const CharacterDetail = () => {
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    console.log('allData', allData);
-
     api.allCharacters('all').then((info) => {
       setAllData(info);
     });
@@ -40,7 +39,7 @@ const CharacterDetail = () => {
     });
     return names;
   };
-  console.log('Holi');
+
   const houseBadge = () => {
     if (dataFind.house === 'Gryffindor') {
       return `${badgeGryff}`;
@@ -67,8 +66,6 @@ const CharacterDetail = () => {
     }
   };
 
-  console.log('dataFind2', dataFind);
-
   return dataFind && dataFind.id ? (
     <main className="main-detail">
       <Link to="/" className="btn-back">
@@ -84,7 +81,11 @@ const CharacterDetail = () => {
           backgroundImage: `url(${backgroundHouse()})`,
         }}
       >
-        <img src={dataFind.image} alt="" className="detail-img" />
+        <img
+          src={dataFind.image !== '' ? dataFind.image : defaultImage}
+          alt=""
+          className="detail-img"
+        />
         <section className="detail-text">
           <div className="detail-text-header">
             <h2 className="detail-title">{dataFind.name}</h2>
@@ -99,7 +100,7 @@ const CharacterDetail = () => {
           <p>Género: {dataFind.gender === 'male' ? 'Hombre' : 'Mujer'}</p>
           <p>Especie: {dataFind.species}</p>
           <ul className="alternate-names">
-            Nombres alternativos:{' '}
+            Nombres alternativos: <br></br>
             {dataFind.alternate_names.length > 0
               ? renderAlternateNames()
               : 'no tiene'}
