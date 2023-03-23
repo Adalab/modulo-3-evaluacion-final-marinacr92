@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.5b2efcf9.css",
-    "main.js": "./static/js/main.b5b4a1a1.js",
+    "main.js": "./static/js/main.08fb0762.js",
     "static/media/papiro.jpg": "./static/media/papiro.24db657d81b605f56cfc.jpg",
     "static/media/cromoRana.png": "./static/media/cromoRana.3aac360b4004f98c7b15.png",
     "static/media/verde.jpg": "./static/media/verde.12e13e1d68ada91c1c8b.jpg",
@@ -18,10 +18,10 @@
     "static/media/hogwartsExpress2.png": "./static/media/hogwartsExpress2.186bc82cc58af0571a65.png",
     "index.html": "./index.html",
     "main.5b2efcf9.css.map": "./static/css/main.5b2efcf9.css.map",
-    "main.b5b4a1a1.js.map": "./static/js/main.b5b4a1a1.js.map"
+    "main.08fb0762.js.map": "./static/js/main.08fb0762.js.map"
   },
   "entrypoints": [
     "static/css/main.5b2efcf9.css",
-    "static/js/main.b5b4a1a1.js"
+    "static/js/main.08fb0762.js"
   ]
 }
