@@ -8,6 +8,7 @@ import backGreen from '../images/verde.jpg';
 import backBlue from '../images/azul.jpg';
 import backYellow from '../images/amarillo.jpeg';
 import backBlack from '../images/negro.jpg';
+import backGrey from '../images/plata.jpg';
 import badgeGryff from '../images/badgeGryff.png';
 import badgeHuff from '../images/badgeHuff.png';
 import badgeRav from '../images/badgeRav.png';
@@ -15,6 +16,7 @@ import badgeSlyth from '../images/badgeSlyth.png';
 import snitch from '../images/snitch.png';
 import alive from '../images/heart.png';
 import dead from '../images/dead.png';
+import wand from '../images/varita.png';
 import defaultImage from '../images/cromoRana.png';
 import NotFoundPage from './NotFoundPage';
 
@@ -72,45 +74,60 @@ const CharacterDetail = () => {
         <img src={snitch} className="btn-back-img" alt="" />
         Volver al Gran Salón
       </Link>
-      <section className="badge-card">
-        <div className="detail-badge">
-          <img src={houseBadge()} alt="" className="detail-badge-img" />
-        </div>
-        <article
-          className="detail-card"
-          style={{
-            backgroundImage: `url(${backgroundHouse()})`,
-          }}
-        >
-          <div
-            className="detail-img"
-            style={{
-              backgroundImage: `url(${
-                dataFind.image !== '' ? dataFind.image : defaultImage
-              })`,
-            }}
-          ></div>
-          <section className="detail-text">
-            <div className="detail-text-header">
-              <h2 className="detail-title">{dataFind.name}</h2>
-              <img
-                src={dataFind.alive ? alive : dead}
-                alt=""
-                className="icon-status"
-              />
+      <div className="flip">
+        <p className="flip-msg">¡Gírame!</p>
+        <img src={wand} alt="" />
+      </div>
+      <section className="detail-card">
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <article
+              className="flip-card-front" //detail-card
+              style={{
+                backgroundImage: `url(${backgroundHouse()})`,
+              }}
+            >
+              <div
+                className="detail-img"
+                style={{
+                  backgroundImage: `url(${
+                    dataFind.image !== '' ? dataFind.image : defaultImage
+                  })`,
+                }}
+              ></div>
+              <section className="detail-text">
+                <div className="detail-text-header">
+                  <h2 className="detail-title">{dataFind.name}</h2>
+                  <img
+                    src={dataFind.alive ? alive : dead}
+                    alt=""
+                    className="icon-status"
+                  />
+                </div>
+                <p>Casa: {dataFind.house}</p>
+                <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
+                <p>Género: {dataFind.gender === 'male' ? 'Hombre' : 'Mujer'}</p>
+                <p>Especie: {dataFind.species}</p>
+                <ul className="alternate-names">
+                  Nombres alternativos: <br></br>
+                  {dataFind.alternate_names.length > 0
+                    ? renderAlternateNames()
+                    : 'no tiene'}
+                </ul>
+              </section>
+            </article>
+            <div
+              className="flip-card-back"
+              style={{
+                backgroundImage: `url(${backGrey})`,
+              }}
+            >
+              {' '}
+              {/*detail-badge*/}
+              <img src={houseBadge()} alt="" className="detail-badge-img" />
             </div>
-            <p>Casa: {dataFind.house}</p>
-            <p>Estatus: {dataFind.alive ? 'Vivo' : 'Muerto'}</p>
-            <p>Género: {dataFind.gender === 'male' ? 'Hombre' : 'Mujer'}</p>
-            <p>Especie: {dataFind.species}</p>
-            <ul className="alternate-names">
-              Nombres alternativos: <br></br>
-              {dataFind.alternate_names.length > 0
-                ? renderAlternateNames()
-                : 'no tiene'}
-            </ul>
-          </section>
-        </article>
+          </div>
+        </div>
       </section>
       <div className="container-url">
         <p className="text-url">
